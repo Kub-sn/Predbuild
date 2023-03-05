@@ -1,4 +1,4 @@
-import { Hero } from '../model/hero.dto';
+import { Hero } from '../model/hero';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
