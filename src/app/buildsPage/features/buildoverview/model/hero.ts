@@ -6,5 +6,4 @@ export interface Hero {
         description: string,
         abilities: string[],
         imageUrl: string
-
 }

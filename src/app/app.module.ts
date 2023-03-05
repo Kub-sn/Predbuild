@@ -9,10 +9,16 @@ import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { BuildoverviewComponent } from './buildsPage/features/buildoverview/buildoverview.component';
 import { BuildsoverviewModule } from './buildsPage/features/buildoverview/buildoverview.module';
+import { BuildDetailsComponent } from './buildsPage/features/build-details/build-details.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BuildDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +27,10 @@ import { BuildsoverviewModule } from './buildsPage/features/buildoverview/buildo
     BrowserAnimationsModule,
     MatSlideToggleModule, 
     MatButtonModule,
-    BuildsoverviewModule
+    BuildsoverviewModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]
