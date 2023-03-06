@@ -1,3 +1,4 @@
+import { LoginModule } from './userManagement/login/login.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,12 +9,12 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle'
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { BuildsoverviewModule } from './buildsPage/features/buildoverview/buildoverview.module';
-import { BuildDetailsComponent } from './buildsPage/features/build-details/build-details.component';
+import { UserRegistrationComponent } from './userManagement/user-registration/user-registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BuildDetailsComponent
+    UserRegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +24,7 @@ import { BuildDetailsComponent } from './buildsPage/features/build-details/build
     MatSlideToggleModule, 
     MatButtonModule,
     BuildsoverviewModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
