@@ -5,8 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle'
-import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { BuildsoverviewModule } from './buildsPage/features/buildoverview/buildoverview.module';
 import { UserRegistrationComponent } from './userManagement/user-registration/user-registration.component';
@@ -21,8 +19,6 @@ import { UserRegistrationComponent } from './userManagement/user-registration/us
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatSlideToggleModule, 
-    MatButtonModule,
     BuildsoverviewModule,
     LoginModule
   ],
