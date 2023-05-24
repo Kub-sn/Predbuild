@@ -1,16 +1,76 @@
 <div class="center-container">
   <mat-card>
-    <mat-card-title class="">Login</mat-card-title>
     <mat-card-content>
-      <form>
-        <mat-form-field>
-          <input matInput placeholder="Username">
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput type="password" placeholder="Password">
-        </mat-form-field>
-        <button mat-raised-button cl color="primary">Login</button>
+      <div class="text-center text-xl">
+        <p>Sign in</p>
+      </div>
+      <form
+        (ngSubmit)="onLogin()"
+        name="loginForm"
+        [formGroup]="loginForm"
+        class="space-y-4"
+      >
+        <div class="pt-10">
+          <mat-form-field class="w-96">
+            <mat-label>Email</mat-label>
+            <input
+              formControlName="email"
+              matInput
+              required
+              (keyup.enter)="onLogin()"
+            />
+            <mat-error
+              *ngIf="!loginForm.controls['email'].valid"
+              class="text-center"
+            >
+              Email is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field class="w-96">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              formControlName="password"
+              [type]="hide ? 'password' : 'text'"
+              required
+              (keyup.enter)="onLogin()"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide Password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>
+                {{ hide ? "visibility_off" : "visibility" }}
+              </mat-icon>
+            </button>
+            <mat-error
+              *ngIf="!loginForm.controls['password'].valid"
+              class="text-center"
+            >
+              Password must be at least 6 characters long and contain a number
+              and a special character
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div>
+          <button mat-flat-button color="primary" class="mt-8">Login</button>
+        </div>
       </form>
+
+      <div class="button-row gap-0 justify-between">
+        <span>
+          <a routerLink="/auth/forgot-password">Create New Account</a></span
+        >
+        <span>
+          <a routerLink="/auth/forgot-password">Forgot Password?</a>
+        </span>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>
