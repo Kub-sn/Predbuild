@@ -8,11 +8,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { BuildsoverviewModule } from './buildsPage/features/buildoverview/buildoverview.module';
 import { UserRegistrationComponent } from './userManagement/user-registration/user-registration.component';
+import { HeaderModule } from './shared/header/header.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserRegistrationComponent
+    UserRegistrationComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +21,8 @@ import { UserRegistrationComponent } from './userManagement/user-registration/us
     HttpClientModule,
     BrowserAnimationsModule,
     BuildsoverviewModule,
-    LoginModule
+    LoginModule,
+    HeaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
