@@ -1,11 +1,14 @@
-<div class="center-container">
+<div class="center-container flex-col">
+  <div class="text-center">
+    <h1 class="text-xl text-cyan-dark">Predbuild</h1>
+  </div>
   <mat-card>
     <mat-card-content>
       <div class="text-center text-xl">
         <p>Sign in</p>
       </div>
       <form
-        (ngSubmit)="onLogin()"
+        (ngSubmit)="login()"
         name="loginForm"
         [formGroup]="loginForm"
         class="space-y-4"
@@ -17,7 +20,7 @@
               formControlName="email"
               matInput
               required
-              (keyup.enter)="onLogin()"
+              (keyup.enter)="login()"
             />
             <mat-error
               *ngIf="!loginForm.controls['email'].valid"
@@ -36,7 +39,7 @@
               formControlName="password"
               [type]="hide ? 'password' : 'text'"
               required
-              (keyup.enter)="onLogin()"
+              (keyup.enter)="login()"
             />
             <button
               mat-icon-button
@@ -58,18 +61,29 @@
             </mat-error>
           </mat-form-field>
         </div>
-        <div>
-          <button mat-flat-button color="primary" class="mt-8">Login</button>
+        <div class="">
+          <mat-checkbox formControlName="rememberMe">Remember me</mat-checkbox>
         </div>
+        <button mat-flat-button (click)="login()"
+          color="primary" class="w-full text-center">Login</button>
+        <a
+          mat-stroked-button
+          color="primary"
+          class="w-full text-center"
+          routerLink="/auth/register"
+          routerLinkActive="active" 
+        >
+          Create New Account
+      </a>
       </form>
 
-      <div class="button-row gap-0 justify-between">
-        <span>
-          <a routerLink="/auth/forgot-password">Create New Account</a></span
+      <div class="text-center mt-2">
+        <a mat-button
+          color="ascent"
+          routerLink="/auth/forgot-password"
         >
-        <span>
-          <a routerLink="/auth/forgot-password">Forgot Password?</a>
-        </span>
+          Forgot Password?
+      </a>
       </div>
     </mat-card-content>
   </mat-card>

@@ -8,6 +8,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatToolbarModule} from '@angular/material/toolbar'
 import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -19,7 +21,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatToolbarModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule,
+    RouterModule
   ]
 })
 export class LoginModule { }

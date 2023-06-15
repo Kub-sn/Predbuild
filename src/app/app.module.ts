@@ -7,13 +7,11 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { BuildsoverviewModule } from './buildsPage/features/buildoverview/buildoverview.module';
-import { UserRegistrationComponent } from './userManagement/user-registration/user-registration.component';
 import { HeaderModule } from './shared/header/header.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    UserRegistrationComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +20,7 @@ import { HeaderModule } from './shared/header/header.module';
     BrowserAnimationsModule,
     BuildsoverviewModule,
     LoginModule,
-    HeaderModule
+    HeaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

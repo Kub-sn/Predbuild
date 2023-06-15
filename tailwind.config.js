@@ -20,6 +20,9 @@ module.exports = {
       'gray-dark': '#273444',
       'gray': '#8492a6',
       'gray-light': '#d3dce6',
+      'emerald': '#065f46',
+      'cyan-dark': '#155e75',
+      'cyan-light': '#0891b2',
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],

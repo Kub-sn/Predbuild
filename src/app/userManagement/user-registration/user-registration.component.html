@@ -1,1 +1,78 @@
-<p>user-registration works!</p>
+<div class="center-container flex-col">
+    <div class="text-center">
+      <h1 class="text-xl text-cyan-dark">Registration</h1>
+    </div>
+    <mat-card>
+      <mat-card-content>
+        <div class="text-center text-xl">
+          <p>Register your Account</p>
+        </div>
+        <form
+          (ngSubmit)="register()"
+          name="loginForm"
+          [formGroup]="loginForm"
+          class="space-y-4"
+        >
+          <div class="pt-10">
+            <mat-form-field class="w-96">
+              <mat-label>Email</mat-label>
+              <input
+                formControlName="email"
+                matInput
+                required
+                (keyup.enter)="register()"
+              />
+              <mat-error
+                *ngIf="!loginForm.controls['email'].valid"
+                class="text-center"
+              >
+                Email is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+  
+          <div>
+            <mat-form-field class="w-96">
+              <mat-label>Password</mat-label>
+              <input
+                matInput
+                formControlName="password"
+                [type]="hide ? 'password' : 'text'"
+                required
+                (keyup.enter)="register()"
+              />
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide Password'"
+                [attr.aria-pressed]="hide"
+              >
+                <mat-icon>
+                  {{ hide ? "visibility_off" : "visibility" }}
+                </mat-icon>
+              </button>
+              <mat-error
+                *ngIf="!loginForm.controls['password'].valid"
+                class="text-center"
+              >
+                Password must be at least 6 characters long and contain a number
+                and a special character
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <button mat-flat-button color="primary" class="w-full text-center" (click)="register()">Create New Account</button>
+          <a
+            mat-stroked-button
+            color="primary"
+            class="w-full text-center"
+            routerLink="/auth/login"  
+          >
+            I already have an account
+        </a>
+        </form>
+  
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
